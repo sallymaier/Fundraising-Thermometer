@@ -636,10 +636,27 @@
 // END MUSTACHE SOURCE CODE
 $(document).ready(function() {
 
-    $.get('FundraisingThermometer.html', function(template, textStatus, jqXhr) {
+    var   percent =  Math.floor((raised / goal) * 100);
+
+    var amounts = {
+      "goal": goal.toLocaleString(),
+      "raised": raised.toLocaleString(),
+      "percent": percent,
+      "sponsors": sponsors
+    }
+
+    $.get('https://raw.githubusercontent.com/sallymaier/Fundraising-Thermometer/master/FundraisingThermometer.html', function(template, textStatus, jqXhr) {
+        var info = Mustache.to_html(template, amounts);
+        $('#htmlpull').html(info);
+
+        var template = $('#thermometerTemplate').html();
         var info = Mustache.to_html(template, amounts);
         $('#thermometer').html(info);
     });
+
+
+
+
 });
 
 

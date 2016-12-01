@@ -1,22 +1,9 @@
-<script>
-
-var   percent =  Math.floor((raised / goal) * 100);
-
-var amounts = {
-  "goal": goal.toLocaleString(),
-  "raised": raised.toLocaleString(),
-  "percent": percent,
-  "sponsors": sponsors
-}
-</script>
-
-
 <script id="thermometerTemplate" type="text/template">
     <link rel="stylesheet" type="text/css" href="FundraisingThermometer.css" />
     <div id=countdown-wrap>
       <div id="goal">${{goal}}</div>
       <div id="glass">
-        <div id="progress">
+        <div id="progress" style="width: {{percent}}%;">
         </div>
       </div>
       <div class="goal-stat">
@@ -25,7 +12,7 @@ var amounts = {
       </div>
       <div class="goal-stat">
         <span class="goal-number">{{percent}}%</span>
-        <span class="goal-label">Funded</span>
+        <span class="goal-label">of Goal</span>
       </div>
 <!--       <div class="goal-stat">
         <span class="goal-number">{{sponsors}}</span>

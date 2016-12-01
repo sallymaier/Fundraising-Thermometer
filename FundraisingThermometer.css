@@ -2,12 +2,13 @@
   width: 100%;
   height: 300px;
   padding: 20px;
-  font-family: arial;
+  font-family: "proxima-nova", helvetica, arial, sans-serif;
 }
 #goal {
-  font-size: 48px;
+  font-size: 36px;
+  font-weight: 100;
   text-align: right;
-  width: 80%;
+  width: 66%;
 }
 @media only screen and (max-width: 640px) {
   #goal {
@@ -15,7 +16,7 @@
   }
 }
 #glass {
-  width: 80%;
+  width: 66%;
   height: 20px;
   background: #c7c7c7;
   border-radius: 10px;
@@ -24,9 +25,9 @@
 }
 #progress {
   float: left;
-  width: 16%;
+
   height: 20px;
-  background: #AB2430;
+  background: #00a64f;
   z-index: 333;
 }
 .goal-stat {
